@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Listagem de doadores</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    @if(valor$ | async; as valor) {
+      <table-component [dataSources]="valor"
+      [displayedColumns]="displayedColumns" 
+      [hasActionColumn]="true" 
+      [actionButtons]="actionButtons" 
+       (buttonClick)="handleButtonClick($event)"/>
+    } @else {
+      <p>Não foram encontrados registros...</p>
+    }
+  </mat-card-content>
+</mat-card>
